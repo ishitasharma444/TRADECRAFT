@@ -15,6 +15,9 @@ import { ForgotPasswordPage } from './pages/ForgotPasswordPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
 
+// Isolated Dev Route
+import { WorldTestPage } from './pages/dev/WorldTestPage';
+
 // Authenticated Pages
 import { AppIndexPage } from './pages/app/AppIndexPage';
 import { WorldPage } from './pages/app/WorldPage';
@@ -38,6 +41,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Isolated Dev Route for 3D Engine Failsafe Verification */}
+        <Route path="/dev/world-test" element={<WorldTestPage />} />
+
         {/* Public Website Routes */}
         <Route element={<PublicLayout />}>
           <Route path="/" element={<LandingPage />} />
